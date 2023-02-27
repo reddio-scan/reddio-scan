@@ -1,0 +1,11 @@
+# Dependency directories
+node_modules/
+
+# Publish Directory
+build/
+
+# Root level folders/files
+/package.json
+
+# next
+.next/
