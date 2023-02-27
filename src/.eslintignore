@@ -1,0 +1,5 @@
+node_modules
+next-env.d.ts
+next.config.js
+backup/*
+jest.config.js
