@@ -293,11 +293,11 @@ const RecordsTable = (props: Props): JSX.Element => {
       minWidth: '100px',
       cell: (row: any) => getAddressLink(row.contract_address),
     },
-    // {
-    //   name: 'Display Value',
-    //   selector: (row: any) => row.display_value,
-    //   sortable: true,
-    // },
+    {
+      name: 'Display Value',
+      selector: (row: any) => row.display_value,
+      sortable: true,
+    },
     {
       name: 'Stark Key',
       selector: (row: any) => row.stark_key,
@@ -437,11 +437,11 @@ const RecordsTable = (props: Props): JSX.Element => {
     //   selector: (row: any) => row.chain_status,
     //   sortable: true,
     // },
-    // {
-    //   name: 'Display Value',
-    //   selector: (row: any) => row.display_value,
-    //   sortable: true,
-    // },
+    {
+      name: 'Display Value',
+      selector: (row: any) => row.display_value,
+      sortable: true,
+    },
     {
       name: 'Stark Key',
       selector: (row: any) => row.stark_key,
