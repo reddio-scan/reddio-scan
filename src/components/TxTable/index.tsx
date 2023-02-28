@@ -177,6 +177,10 @@ const TxTable = ({ transactionRecords }: Props): JSX.Element => {
                       <Td>Token Type</Td>
                       <Td>{recordTableData?.asset_type}</Td>
                     </Tr>
+                    <Tr>
+                      <Td>Display Value</Td>
+                      <Td>{recordTableData?.display_value}</Td>
+                    </Tr>
 
                     <Tr>
                       <Td>Contract Address</Td>
