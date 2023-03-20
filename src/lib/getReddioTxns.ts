@@ -1,6 +1,7 @@
 import axios from 'axios';
 import epochToUTC from './epochToUTC';
 import dedupeArray from './dedupeArray';
+import { baseurl } from './config';
 interface RecordsAPIResponse<T> {
   status: string;
   error: string;
@@ -232,13 +233,13 @@ const getReddioTxns = async <T>(
   let getURL: string;
   let searchValueType: string;
   if (searchValue.length === 6) {
-    getURL = `https://api-dev.reddio.com/v1/txn?sequence_id=${searchValue}`;
+    getURL = `${baseurl}/v1/txn?sequence_id=${searchValue}`;
     searchValueType = 'sequence_id';
   } else if (searchValue.length === 42) {
-    getURL = `https://api-dev.reddio.com/v1/txns?contract_address=${searchValue}`;
+    getURL = `${baseurl}/v1/txns?contract_address=${searchValue}`;
     searchValueType = 'contract_address';
   } else {
-    getURL = `https://api-dev.reddio.com/v1/txns?stark_key=${searchValue}`;
+    getURL = `${baseurl}/v1/txns?stark_key=${searchValue}`;
     searchValueType = 'stark_key';
   }
 

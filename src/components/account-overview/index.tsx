@@ -9,6 +9,7 @@ import {
 } from '../CustomStyled';
 import { useToast } from '@chakra-ui/react';
 import axios from 'axios';
+import { baseurl } from '../../lib/config';
 
 interface Address {
   address: string;
@@ -46,7 +47,7 @@ const AccountOverview = ({ address }: Address): JSX.Element => {
     // try
     // reddio.apis.getBalancesV2
     axios
-      .get(`https://api-dev.reddio.com/v1/balances?stark_key=${address}`)
+      .get(`${baseurl}/v1/balances?stark_key=${address}`)
       .then((res) => {
         console.log(res.data.data.list);
         const { countERC20, countERC721, countERC721M } = iterate(

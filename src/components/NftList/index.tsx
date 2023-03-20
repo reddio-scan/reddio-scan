@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import NftCard from '../NftCard';
 import { SimpleGrid, GridItem, Center } from '@chakra-ui/react';
 import axios from 'axios';
+import { baseurl } from '../../lib/config';
 interface Stark {
   starkKey: string;
 }
@@ -45,7 +46,7 @@ const NftList = ({ starkKey }: Stark) => {
   const getL2Balances = async () => {
     try {
       const resp = await axios.get(
-        `https://api-dev.reddio.com/v1/balances?stark_key=${starkKey}`,
+        `${baseurl}/v1/balances?stark_key=${starkKey}`,
       );
       iterate(resp.data.data.list);
     } catch (e) {

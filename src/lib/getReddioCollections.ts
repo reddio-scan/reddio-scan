@@ -1,6 +1,7 @@
 import axios from 'axios';
 import getRandomAmount from './getRandomAmount';
 import assignIncrementID from './assignIncrementID';
+import { baseurl } from './config';
 export interface CollectionsAPIResponse {
   status: string;
   error: string;
@@ -58,7 +59,7 @@ const getReddioCollections = async (): Promise<
 > => {
   try {
     const response = await axios.get<CollectionsAPIResponse>(
-      'https://api-dev.reddio.com/v1/collections',
+      `${baseurl}/v1/collections`,
     );
     return processCollections(response.data.data);
   } catch (error) {

@@ -21,6 +21,7 @@ import {
 } from '../../lib/txUtils';
 import axios from 'axios';
 import NftCard from '../NftCard';
+import { baseurl } from '../../lib/config';
 interface Props {
   transactionRecords: Transaction[];
 }
@@ -101,7 +102,7 @@ const TxTable = ({ transactionRecords }: Props): JSX.Element => {
     ) {
       try {
         const resp = await axios.get(
-          `https://api-dev.reddio.com/v1/contract_info?contract_address=${recordTableData.contract_address}`,
+          `${baseurl}/v1/contract_info?contract_address=${recordTableData.contract_address}`,
         );
         const data: ContractAddress = resp.data.data;
         if (recordTableData == null) {

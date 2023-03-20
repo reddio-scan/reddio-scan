@@ -1,7 +1,11 @@
 import { ethers } from 'ethers';
 import { Reddio } from '@reddio.com/js';
 
-const isVercel = process.env.IS_VERCEL === '1';
+const isMain = process.env.IS_MAIN === '1';
+
+const baseurl = isMain
+  ? 'https://api.reddio.com'
+  : 'https://api-dev.reddio.com';
 
 let reddio: Reddio;
 const initReddio = () => {
@@ -9,9 +13,9 @@ const initReddio = () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum as any);
     reddio = new Reddio({
       provider,
-      env: isVercel ? 'main' : 'test',
+      env: isMain ? 'main' : 'test',
     });
   }
 };
 
-export { initReddio, reddio, isVercel };
+export { initReddio, reddio, isMain, baseurl };

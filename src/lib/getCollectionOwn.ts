@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { baseurl } from './config';
 
 interface Balance {
   asset_id: string;
@@ -51,11 +52,9 @@ export const getCollectionOwn = async (
 ): Promise<CollectionData[]> => {
   const data: CollectionData[] = [];
   const respBalance = await axios.get(
-    `https://api-dev.reddio.com/v1/balances?stark_key=${starkKey}`,
+    `${baseurl}/v1/balances?stark_key=${starkKey}`,
   );
-  const responseCollection = await axios.get(
-    'https://api-dev.reddio.com/v1/collections',
-  );
+  const responseCollection = await axios.get(`${baseurl}/v1/collections`);
   const NftAddress = iterate(respBalance.data.data.list);
   const respBalanceArray: ReddioCollection[] = responseCollection.data.data;
   for (let i = 0; i < respBalanceArray.length; i++) {
