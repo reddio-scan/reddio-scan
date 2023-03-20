@@ -1,7 +1,7 @@
 import { ethers } from 'ethers';
 import { Reddio } from '@reddio.com/js';
 
-const isMain = process.env.IS_MAIN === '1';
+const isMain = process.env.NODE_ENV === 'production';
 
 const baseurl = isMain
   ? 'https://api.reddio.com'
