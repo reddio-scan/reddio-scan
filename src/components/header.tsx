@@ -1,4 +1,4 @@
-import { Spacer, Wrap, WrapItem, useToast } from '@chakra-ui/react';
+import { useToast, Flex, Box } from '@chakra-ui/react';
 import Login from './Login';
 import CustomModal from './CustomModal';
 import AccountState from './Account';
@@ -55,11 +55,11 @@ const Header = (): JSX.Element => {
   };
   return (
     <>
-      <Wrap p="5" spacing="30px" justify="space-between" align="center">
-        <WrapItem>
+      <Flex width="100%" p="5" justify="space-between" align="center">
+        <Box flexShrink="0">
           <HomeButton />
-        </WrapItem>
-        <WrapItem>
+        </Box>
+        <Box ml="20px">
           <SearchBar
             handleInput={handleInput}
             handleSearch={handleSearch}
@@ -69,21 +69,24 @@ const Header = (): JSX.Element => {
             handleClearInput={handleClearInput}
             address={searchVal}
           />
-        </WrapItem>
-        <WrapItem>
+        </Box>
+
+        <Flex
+          justify="flex-end"
+          align="center"
+          flex="1 0 auto"
+          marginLeft={5}
+          display={{ base: 'none', '2xl': 'flex' }}
+        >
           <Login />
-        </WrapItem>
-        <WrapItem>
           <CustomModal
             modalTitle="StarkEx"
             modalHeader="StarkEx Account Details"
           >
             <AccountState />
           </CustomModal>
-        </WrapItem>
-      </Wrap>
-
-      <Spacer height="20" />
+        </Flex>
+      </Flex>
     </>
   );
 };

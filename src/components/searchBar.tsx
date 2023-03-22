@@ -39,7 +39,7 @@ const SearchBar = ({
       justify={'center'}
       padding={1}
     >
-      <InputGroup width="container.md">
+      <InputGroup width="40vw" maxWidth="600px" minWidth="200px">
         <Input
           onChange={(event) => handleInput(event)}
           onKeyDown={(event) => {
