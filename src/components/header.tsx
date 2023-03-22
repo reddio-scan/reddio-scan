@@ -76,7 +76,7 @@ const Header = (): JSX.Element => {
           align="center"
           flex="1 0 auto"
           marginLeft={5}
-          display={{ base: 'none', '2xl': 'flex' }}
+          display={{ base: 'none', xl: 'flex' }}
         >
           <Login />
           <CustomModal
