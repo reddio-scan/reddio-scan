@@ -7,6 +7,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  env: {
+    NETWORK: process.env.NETWORK,
+  },
 };
 
 module.exports = nextConfig;
