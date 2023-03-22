@@ -2,6 +2,7 @@ import { ethers } from 'ethers';
 import { Reddio } from '@reddio.com/js';
 
 const isMain = process.env.NETWORK === 'main';
+console.log(process.env.NETWORK);
 
 const baseurl = isMain
   ? 'https://api.reddio.com'
